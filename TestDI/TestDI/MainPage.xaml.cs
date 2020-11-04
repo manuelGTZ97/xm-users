@@ -30,7 +30,7 @@ namespace TestDI
             // Validate user
             if(user != null)
             {
-                // Push page if the user exists
+                // Push page
                 var usersList = new NavigationPage(new UsersList());
                 await Navigation.PushModalAsync(usersList);
             } else
