@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestDI.UsersList"
+             Title="Users">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" Text="Add User" Priority="0" Clicked="OnClickAddUserPage" />
+        <ToolbarItem Order="Secondary" Text="Login" Priority="0" Clicked="OnClickLoginPage"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <ListView x:Name="Users" IsVisible="True" ItemsSource="{Binding User}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="60" >
+                         <Label Grid.Column="1" Text="{Binding UserName}" VerticalTextAlignment="Start" Margin="5"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
