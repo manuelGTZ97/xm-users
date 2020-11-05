@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestDI
+namespace TestDI.Models
 {
     public class User
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TestDI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace TestDI
         {
             InitializeComponent();
             Singleton.GetInstance();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new LoginView();
         }
 
         protected override void OnStart()

@@ -2,33 +2,29 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using TestDI.Models;
+using TestDI.ViewModels;
 
 namespace TestDI
 {
     class Singleton
     {
-        public ObservableCollection<User> Users{ get; }
-        private Singleton() {
+        public ObservableCollection<User> Users { get; set; }
+        private Singleton()
+        {
             Users = new ObservableCollection<User>();
-            Users.Add(new User("test", "123456"));
+            Users.Add(new User("test", "test"));
         }
 
         private static Singleton _instance;
 
         public static Singleton GetInstance()
         {
-            if(_instance == null)
+            if (_instance == null)
             {
                 _instance = new Singleton();
             }
             return _instance;
         }
-
-        public void AddUser(String userName, String password) 
-        {
-            Users.Add(new User(userName, password));
-        }
-
-        
     }
 }

@@ -4,23 +4,25 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TestDI.UsersList"
+             x:Class="TestDI.Views.UsersView"
              Title="Users">
+    
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Secondary" Text="Add User" Priority="0" Clicked="OnClickAddUserPage" />
-        <ToolbarItem Order="Secondary" Text="Login" Priority="0" Clicked="OnClickLoginPage"/>
+        <ToolbarItem Order="Secondary" Text="Add User" Priority="0" Command="{Binding GoToAddUserCommand}" />
+        <ToolbarItem Order="Secondary" Text="Login" Priority="0" Command="{Binding GoToLoginCommand}"/>
     </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout Padding="20">
             <ListView x:Name="Users" IsVisible="True" ItemsSource="{Binding User}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell Height="60" >
-                         <Label Grid.Column="1" Text="{Binding UserName}" VerticalTextAlignment="Start" Margin="5"/>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="60" >
+                            <Label Grid.Column="1" Text="{Binding UserName}" VerticalTextAlignment="Start" Margin="5"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

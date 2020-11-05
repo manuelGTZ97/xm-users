@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:vm="clr-namespace:TestDI.ViewModels"
+             mc:Ignorable="d"
+             x:Class="TestDI.Views.LoginView">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+            <Entry x:Name="Username" Text="{Binding UserName }" Placeholder="Username" />
+            <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Password" IsPassword="True" />
+            <Button Text="Login"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Command="{Binding LoginCommand}" />
+            <Label Text="{Binding ErrorMessage}" TextColor="Red" HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
